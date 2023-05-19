@@ -3,6 +3,8 @@
 :root {
   --main-font: "Lato", sans-serif;
   --primary-color: #8058ee;
+  --black: #1e1e1e;
+  --white: #fff;
 }
 
 /* Global styles */
@@ -36,6 +38,20 @@ body {
   }
 }
 
-[class$="__heading"] {
-  margin: 2rem 0;
+/* insurance-quote-card */
+.insurance-quote-card {
+  border: solid 1px var(--black);
+}
+
+.insurance-quote-card__header {
+  background-color: var(--primary-color);
+}
+
+.insurance-quote-card__heading {
+  margin: 0;
+  text-align: center;
+  text-align: center;
+  color: var(--white);
+  font-size: 2.5rem;
+  text-transform: uppercase;
 }
