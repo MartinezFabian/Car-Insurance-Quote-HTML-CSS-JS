@@ -1,0 +1,41 @@
+/* Variables */
+
+:root {
+  --main-font: "Lato", sans-serif;
+  --primary-color: #8058ee;
+}
+
+/* Global styles */
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.container {
+  max-width: 80rem;
+  width: 90%; /* cuando el ancho sea menos de 1200px va a ocupar el 90% */
+  margin: 10rem auto 0 auto;
+}
+
+@media (min-width: 468px) {
+  .container {
+    margin: 20rem auto 0 auto;
+  }
+}
+
+[class$="__heading"] {
+  margin: 2rem 0;
+}
