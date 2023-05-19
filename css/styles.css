@@ -29,7 +29,7 @@ body {
 .container {
   max-width: 80rem;
   width: 90%; /* cuando el ancho sea menos de 1200px va a ocupar el 90% */
-  margin: 10rem auto 0 auto;
+  margin: 10rem auto 4rem auto;
 }
 
 @media (min-width: 468px) {
@@ -40,7 +40,7 @@ body {
 
 /* insurance-quote-card */
 .insurance-quote-card {
-  border: solid 1px var(--black);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .insurance-quote-card__header {
@@ -54,4 +54,126 @@ body {
   color: var(--white);
   font-size: 2.5rem;
   text-transform: uppercase;
+}
+
+/* form */
+.form {
+  padding: 3rem;
+}
+
+@media (min-width: 468px) {
+  .form {
+    padding: 2rem 8rem;
+  }
+}
+
+.form__label {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 1.5rem 1rem 1.5rem 0;
+}
+
+@media (min-width: 468px) {
+  .form__label {
+    font-size: 1.8rem;
+  }
+}
+
+.form__select {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+}
+
+.form__fieldset {
+  margin-top: 2rem;
+  border: none;
+}
+
+.form__legend {
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.form__type-insurance {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form__loader {
+  display: flex;
+  justify-content: center;
+  padding: 6rem;
+}
+
+.loader {
+  color: var(--primary-color);
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em,
+      -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em,
+      -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0,
+      -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
+.form__buton {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  border-style: none;
+  width: 40rem;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
