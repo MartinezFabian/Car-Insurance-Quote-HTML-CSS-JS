@@ -14,5 +14,47 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div id="insurance-quote-card" class="insurance-quote-card">
+        <header class="insurance-quote-card__header">
+          <h1 class="insurance-quote-card__heading">Cotiza tu seguro de Auto</h1>
+        </header>
+
+        <form class="form" action="#" id="form">
+          <div class="form__brand">
+            <label class="form__label" for="brand">Marca:</label>
+            <select class="form__select" id="brand">
+              <option value="">- Seleccionar -</option>
+              <option value="1">Americano</option>
+              <option value="2">Asiático</option>
+              <option value="3">Europeo</option>
+            </select>
+          </div>
+          <div class="form__year">
+            <label class="form__label" for="year">Año:</label>
+            <select class="form__select" id="year"></select>
+          </div>
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Tipo Seguro</legend>
+            <div class="form__type-insurance">
+              <div class="form__radio">
+                <label class="form__label">Básico</label>
+                <input type="radio" name="type-insurance" value="basic" checked />
+              </div>
+              <div class="form__radio">
+                <label class="form__label">Completo</label>
+                <input type="radio" name="type-insurance" value="full" />
+              </div>
+            </div>
+          </fieldset>
+          <span class="loader"></span>
+          <div id="form__result"></div>
+          <div class="form__buton">
+            <button type="submit" class="btn">Cotizar Seguro</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
