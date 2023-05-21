@@ -5,6 +5,8 @@
   --primary-color: #8058ee;
   --black: #1e1e1e;
   --white: #fff;
+  --red: #c20000;
+  --green: rgb(42, 182, 0);
 }
 
 /* Global styles */
@@ -176,4 +178,23 @@ body {
 
 .btn:hover {
   cursor: pointer;
+}
+
+/* messages */
+
+.form__message {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--white);
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.form__message--error {
+  background-color: var(--red);
+}
+
+.form__message--success {
+  background-color: var(--green);
 }
