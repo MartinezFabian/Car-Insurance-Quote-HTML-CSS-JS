@@ -27,3 +27,7 @@ The Car Insurance Quote App offers the following key features:
 3. **Dynamic Quote Generation:** Utilizing JavaScript prototypes to calculate insurance quotes based on inputted information.
 4. **Responsive Design:** A mobile-first approach that ensures optimal usability on various devices and screen sizes.
 5. **Interactive Results:** Displaying insurance quotes in an engaging and visually appealing manner, enhancing user experience.
+
+## Online Demo
+
+You can access the online demo of this project through the following link: [Car insurance quote Demo](https://martinezfabian.github.io/Car-Insurance-Quote-HTML-CSS-JS/)
