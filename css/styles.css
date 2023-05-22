@@ -160,7 +160,11 @@ body {
   }
 }
 
-.form__buton {
+.hidden {
+  display: none;
+}
+
+.form__button {
   margin-top: 4rem;
   display: flex;
   justify-content: center;
@@ -197,4 +201,34 @@ body {
 
 .form__message--success {
   background-color: var(--green);
+}
+
+/* result */
+#form__result {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.result {
+  border: solid 1px var(--primary-color);
+  width: 80%;
+}
+
+.result__heading {
+  text-align: center;
+  background-color: var(--primary-color);
+  margin: 0;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.result__text-bold {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.result__text {
+  font-weight: 400;
 }

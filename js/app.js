@@ -48,9 +48,13 @@ Insurance.prototype.quote = function (basePrice) {
     Seguro de tipo completo: 50% mas 
   */
 
-  finalPrice = this.type === "basic" ? finalPrice * 1.3 : this.type === "full" ?? finalPrice * 1.5;
+  if (this.type === "basic") {
+    finalPrice *= 1.3;
+  } else if (this.type === "full") {
+    finalPrice *= 1.5;
+  }
 
-  return finalPrice;
+  return finalPrice.toFixed(1);
 };
 
 function UserInterface() {}
@@ -94,6 +98,75 @@ UserInterface.prototype.showMessage = (message, type) => {
       div.remove();
     }, 2000);
   }
+};
+
+UserInterface.prototype.showResult = (insurance, totalPrice) => {
+  let previousResult = document.querySelector(".result");
+
+  if (previousResult) {
+    previousResult.remove();
+  }
+
+  // obtener el nombre de la marca
+  let brandName = "";
+
+  switch (insurance.brand) {
+    case "1":
+      brandName = "Americano";
+      break;
+
+    case "2":
+      brandName = "Asiático";
+      break;
+
+    case "3":
+      brandName = "Europeo";
+      break;
+
+    default:
+      break;
+  }
+
+  //obtener el tipo de seguro
+  let typeText = "";
+
+  if (insurance.type === "basic") {
+    typeText = "básico";
+  } else {
+    typeText = "Completo";
+  }
+
+  // crear el HTML con el resultado
+
+  const div = document.createElement("DIV");
+  div.classList.add("result");
+
+  div.innerHTML = `
+    <h2 class="result__heading">Resumen</h2>
+    <p class="result__text-bold">Marca: <span class="result__text">${brandName}</span></p>
+    <p class="result__text-bold">Año: <span class="result__text">${insurance.year}</span></p>
+    <p class="result__text-bold">Tipo: <span class="result__text">${typeText}</span></p>
+    <p class="result__text-bold">Total: <span class="result__text">${totalPrice} US$</span></p>
+  `;
+
+  const formResult = document.querySelector("#form__result");
+
+  const loader = document.querySelector(".form__loader");
+
+  const button = document.querySelector(".btn");
+
+  //desactivamos el button
+  button.disabled = true;
+
+  //mostramos el loader
+  loader.classList.toggle("hidden");
+
+  //luego de 2 segundos ocultamos el loader, activamos el button y agregamos el div con el resultado
+  setTimeout(() => {
+    loader.classList.toggle("hidden");
+    button.disabled = false;
+    formResult.appendChild(div);
+  }, 2000);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -140,7 +213,9 @@ function main() {
     const insurance = new Insurance(selectBrand, selectYear, typeInsurance);
 
     //le pasamos el precio base
-    let result = insurance.quote(2000);
-    console.log(result);
+    let totalPrice = insurance.quote(2000);
+
+    //agregar el HTML con el resultado
+    ui.showResult(insurance, totalPrice);
   }
 }
